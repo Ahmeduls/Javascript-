@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marks</title>
+</head>
+
+<body>
+    <script>
+        var marks;
+
+        marks = Number(prompt("Enter Your Marks"));
+        name = prompt("Enter Your Name")
+        if (marks >= 80 && marks <= 100) {
+            alert("Congratulation " + name + " You have got A+")
+        } else if (marks >= 70 && marks <= 79) {
+            alert(name + " You have got A")
+        } else if (marks >= 60 && marks <= 69) {
+            alert(name + " You have got A-")
+        } else if (marks >= 50 && marks <= 59) {
+            alert(name + " You have got B")
+        } else if (marks >= 40 && marks <= 59) {
+            alert(name + " You have got B-")
+        } else if (marks >= 0 && marks <= 39) {
+            alert("Sorry " + name + " Youa have failed")
+        } else {
+            alert("Invalid Number")
+        }
+    </script>
+</body>
+</html>

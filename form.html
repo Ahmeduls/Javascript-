@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        .login-form {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+        
+        .error-msg {
+            color: red;
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="login-form">
+        <form action="" onsubmit="return false">
+            <div class="form-group">
+                <label for="">User Name</label>
+                <input type="text" style="width: 300px" onselect="alert('User Name selected');" class="form-control" id="username" placeholder="Username" onfocus="backgroundColor(this)">
+                <div class="error-msg" id="username-error">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" style="width: 300px" onselect="alert('Password selected');" class="form-control" id="password" placeholder="Password" onfocus="backgroundColor(this)">
+                <div class="error-msg" id="password-error">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">User Type</label>
+                <select style="padding: 5px 15px; margin-top: 10px" name="" id="select-type" onchange="alert('Selected');" id="user-type">
+                    <option value="">Admin</option>
+                    <option value="">User</option>
+                </select>
+            </div>
+            <div class="error-msg" id="select-error">
+
+            </div>
+            <input type="submit" class="btn btn-success" name="" onclick="checkValidation()">
+        </form>
+    </div>
+    <div class="result" id="show-result">
+
+    </div>
+    <script>
+        function backgroundColor(x) {
+            x.style.background = "pink"
+        }
+    </script>
+    <script>
+        function checkValidation() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var select = document.getElementById("select-type").value;
+
+            var error_flag = 0;
+
+            if (username == null || username == '') {
+                document.getElementById('username-error').innerHTML = "Please insert your username";
+                error_flag = 1;
+            } else {
+                document.getElementById('username-error').innerHTML = '';
+            }
+            if (password == null || password == '') {
+                document.getElementById('password-error').innerHTML = "Please insert your password";
+                error_flag = 1;
+            } else {
+                document.getElementById('password-error').innerHTML = '';
+            }
+            if (password == null || password == '') {
+                document.getElementById('select-error').innerHTML = "Please select the option";
+
+            } else {
+                document.getElementById('select-error').innerHTML = '';
+            }
+            if (error_flag == 0) {
+                document.getElementById('show-result').innerHTML = "Username: " + username + " password: " + password;
+                location.href = "http://facebook.com";
+            }
+        }
+    </script>
+
+    <script src="js/plugins.js"></script>
+</body>
+
+</html>
